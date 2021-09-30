@@ -143,3 +143,4 @@ echo 'Baju =' .  $berakaian['baju']['kemeja']['umum']['panjang']['jenis2'] . '<b
 echo 'Tangan =' . $berakaian['tangan']['jam']['jenis1'] . '<br>';
 echo 'Celana =' . $berakaian['celana']['celana_panjang']['jenis2'] . '<br>';
 echo 'Kaki =' . $berakaian['kaki']['sepatu_santai']['jenis1'] . '<br>';
+?>
