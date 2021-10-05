@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>php2</title>
+</head>
 <?php
 $berakaian = (object)[
     'kepala' => [
@@ -129,18 +139,103 @@ $berakaian = (object)[
         'tidak_memili' => 'none'
     ],
 ];
+$berakaian->kepala = (object)$berakaian->kepala;
+$berakaian->kepala->topi = (object)$berakaian->kepala->topi;
+$berakaian->kepala->peci = (object)$berakaian->kepala->peci;
 
-$berakaian = (array)$berakaian;
+$berakaian->baju = (object)$berakaian->baju;
+$berakaian->baju->kaos = (object)$berakaian->baju->kaos;
+$berakaian->baju->kaos->pendek = (object)$berakaian->baju->kaos->pendek;
+$berakaian->baju->kaos->panjang = (object)$berakaian->baju->kaos->panjang;
+$berakaian->baju->kemeja = (object)$berakaian->baju->kemeja;
+$berakaian->baju->kemeja->umum = (object)$berakaian->baju->kemeja->umum;
+$berakaian->baju->kemeja->umum->pendek = (object)$berakaian->baju->kemeja->umum->pendek;
+$berakaian->baju->kemeja->umum->panjang = (object)$berakaian->baju->kemeja->umum->panjang;
+$berakaian->baju->kemeja->muslim = (object)$berakaian->baju->kemeja->muslim;
+$berakaian->baju->jaket = (object)$berakaian->baju->jaket;
+$berakaian->baju->jas = (object)$berakaian->baju->jas;
 
-echo "<pre>";
-print_r($berakaian);
-echo "<pre>";
+$berakaian->tangan = (object)$berakaian->tangan;
+$berakaian->tangan->jam = (object)$berakaian->tangan->jam;
 
-echo "<h3>Pemagilan Index sesuai yang dibutukan saja</h3>";
+$berakaian->celana = (object)$berakaian->celana;
+$berakaian->celana->celana_panjang = (object)$berakaian->celana->celana_panjang;
+$berakaian->celana->celana_pendek = (object)$berakaian->celana->celana_pendek;
+$berakaian->celana->celana_olahraga = (object)$berakaian->celana->celana_olahraga;
+$berakaian->celana->sarung = (object)$berakaian->celana->sarung;
 
-echo 'Kepala =' . $berakaian['kepala']['topi']['jenis2'] . '<br>';
-echo 'Baju =' .  $berakaian['baju']['kemeja']['umum']['panjang']['jenis2'] . '<br>';
-echo 'Tangan =' . $berakaian['tangan']['jam']['jenis1'] . '<br>';
-echo 'Celana =' . $berakaian['celana']['celana_panjang']['jenis2'] . '<br>';
-echo 'Kaki =' . $berakaian['kaki']['sepatu_santai']['jenis1'] . '<br>';
+$berakaian->kaki = (object)$berakaian->kaki;
+$berakaian->kaki->sandal = (object)$berakaian->kaki->sandal;
+$berakaian->kaki->sepatu_olahraga = (object)$berakaian->kaki->sepatu_olahraga;
+$berakaian->kaki->sepatu_kerja = (object)$berakaian->kaki->sepatu_kerja;
+$berakaian->kaki->sepatu_santai = (object)$berakaian->kaki->sepatu_santai;
+
+// pemangilan bila array
+// echo "<h3>Pemagilan Index sesuai yang dibutukan saja</h3>";
+// echo "<h3>Memili Pakaian</h3>";
+// echo 'Kepala =' . $berakaian['kepala']['topi']['jenis2'] . '<br>';
+// echo 'Baju =' .  $berakaian['baju']['kemeja']['umum']['panjang']['jenis2'] . '<br>';
+// echo 'Tangan =' . $berakaian['tangan']['jam']['jenis1'] . '<br>';
+// echo 'Celana =' . $berakaian['celana']['celana_panjang']['jenis2'] . '<br>';
+// echo 'Kaki =' . $berakaian['kaki']['sepatu_santai']['jenis1'] . '<br>';
+
+//    pemangilan objek
+// echo "<h3>Pemagilan Index sesuai yang dibutukan saja</h3>";
+// echo "<h3>Memili Pakaian</h3>";
+// echo 'Kepala =' . $berakaian->kepala->topi->jenis2 . '<br>';
+// echo 'Baju =' .  $berakaian->baju->kemeja->umum->panjang->jenis2 . '<br>';
+// echo 'Tangan =' . $berakaian->tangan->jam->jenis1 . '<br>';
+// echo 'Celana =' . $berakaian->celana->celana_panjang->jenis2 . '<br>';
+// echo 'Kaki =' . $berakaian->kaki->sepatu_santai->jenis1 . '<br>';
 ?>
+
+<body>
+    <div class="kotak">
+        <div class="col1">
+            <div>
+
+            </div>
+            <?php
+            echo "<pre>";
+            print_r($berakaian);
+            echo "<pre>";
+            ?>
+        </div>
+        <div class="col2">
+            <h3>Pemagilan Index sesuai yang dibutukan saja</h3>
+            <table>
+                <tr>
+                    <th colspan="2">
+                        Berpakaian
+                    </th>
+                </tr>
+                <tr>
+                    <th>Bagian</th>
+                    <th>Pakaian</th>
+                </tr>
+                <tr>
+                    <td>Kepala</td>
+                    <td><?php echo $berakaian->kepala->topi->jenis2; ?></td>
+                </tr>
+                <tr>
+                    <td>Baju</td>
+                    <td><?php echo $berakaian->baju->kemeja->umum->panjang->jenis2; ?></td>
+                </tr>
+                <tr>
+                    <td>Tangan</td>
+                    <td><?php echo $berakaian->tangan->jam->jenis1; ?></td>
+                </tr>
+                <tr>
+                    <td>Celana</td>
+                    <td><?php echo $berakaian->celana->celana_panjang->jenis2; ?></td>
+                </tr>
+                <tr>
+                    <td>Kaki</td>
+                    <td><?php echo $berakaian->kaki->sepatu_santai->jenis1; ?></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
