@@ -139,36 +139,6 @@ $berakaian = (object)[
         'tidak_memili' => 'none'
     ],
 ];
-$berakaian->kepala = (object)$berakaian->kepala;
-$berakaian->kepala->topi = (object)$berakaian->kepala->topi;
-$berakaian->kepala->peci = (object)$berakaian->kepala->peci;
-
-$berakaian->baju = (object)$berakaian->baju;
-$berakaian->baju->kaos = (object)$berakaian->baju->kaos;
-$berakaian->baju->kaos->pendek = (object)$berakaian->baju->kaos->pendek;
-$berakaian->baju->kaos->panjang = (object)$berakaian->baju->kaos->panjang;
-$berakaian->baju->kemeja = (object)$berakaian->baju->kemeja;
-$berakaian->baju->kemeja->umum = (object)$berakaian->baju->kemeja->umum;
-$berakaian->baju->kemeja->umum->pendek = (object)$berakaian->baju->kemeja->umum->pendek;
-$berakaian->baju->kemeja->umum->panjang = (object)$berakaian->baju->kemeja->umum->panjang;
-$berakaian->baju->kemeja->muslim = (object)$berakaian->baju->kemeja->muslim;
-$berakaian->baju->jaket = (object)$berakaian->baju->jaket;
-$berakaian->baju->jas = (object)$berakaian->baju->jas;
-
-$berakaian->tangan = (object)$berakaian->tangan;
-$berakaian->tangan->jam = (object)$berakaian->tangan->jam;
-
-$berakaian->celana = (object)$berakaian->celana;
-$berakaian->celana->celana_panjang = (object)$berakaian->celana->celana_panjang;
-$berakaian->celana->celana_pendek = (object)$berakaian->celana->celana_pendek;
-$berakaian->celana->celana_olahraga = (object)$berakaian->celana->celana_olahraga;
-$berakaian->celana->sarung = (object)$berakaian->celana->sarung;
-
-$berakaian->kaki = (object)$berakaian->kaki;
-$berakaian->kaki->sandal = (object)$berakaian->kaki->sandal;
-$berakaian->kaki->sepatu_olahraga = (object)$berakaian->kaki->sepatu_olahraga;
-$berakaian->kaki->sepatu_kerja = (object)$berakaian->kaki->sepatu_kerja;
-$berakaian->kaki->sepatu_santai = (object)$berakaian->kaki->sepatu_santai;
 
 // pemangilan bila array
 // echo "<h3>Pemagilan Index sesuai yang dibutukan saja</h3>";
@@ -192,14 +162,56 @@ $berakaian->kaki->sepatu_santai = (object)$berakaian->kaki->sepatu_santai;
 <body>
     <div class="kotak">
         <div class="col1">
-            <div>
+            <div class="ob1">
+                <h3>Sebelum Menjadi Objek</h3>
+                <?php
+                echo "<pre>";
+                print_r($berakaian);
+                echo "<pre>";
+                ?>
 
             </div>
+            <!-- merubah manjadi objek semua -->
             <?php
-            echo "<pre>";
-            print_r($berakaian);
-            echo "<pre>";
+            $berakaian->kepala = (object)$berakaian->kepala;
+            $berakaian->kepala->topi = (object)$berakaian->kepala->topi;
+            $berakaian->kepala->peci = (object)$berakaian->kepala->peci;
+
+            $berakaian->baju = (object)$berakaian->baju;
+            $berakaian->baju->kaos = (object)$berakaian->baju->kaos;
+            $berakaian->baju->kaos->pendek = (object)$berakaian->baju->kaos->pendek;
+            $berakaian->baju->kaos->panjang = (object)$berakaian->baju->kaos->panjang;
+            $berakaian->baju->kemeja = (object)$berakaian->baju->kemeja;
+            $berakaian->baju->kemeja->umum = (object)$berakaian->baju->kemeja->umum;
+            $berakaian->baju->kemeja->umum->pendek = (object)$berakaian->baju->kemeja->umum->pendek;
+            $berakaian->baju->kemeja->umum->panjang = (object)$berakaian->baju->kemeja->umum->panjang;
+            $berakaian->baju->kemeja->muslim = (object)$berakaian->baju->kemeja->muslim;
+            $berakaian->baju->jaket = (object)$berakaian->baju->jaket;
+            $berakaian->baju->jas = (object)$berakaian->baju->jas;
+
+            $berakaian->tangan = (object)$berakaian->tangan;
+            $berakaian->tangan->jam = (object)$berakaian->tangan->jam;
+
+            $berakaian->celana = (object)$berakaian->celana;
+            $berakaian->celana->celana_panjang = (object)$berakaian->celana->celana_panjang;
+            $berakaian->celana->celana_pendek = (object)$berakaian->celana->celana_pendek;
+            $berakaian->celana->celana_olahraga = (object)$berakaian->celana->celana_olahraga;
+            $berakaian->celana->sarung = (object)$berakaian->celana->sarung;
+
+            $berakaian->kaki = (object)$berakaian->kaki;
+            $berakaian->kaki->sandal = (object)$berakaian->kaki->sandal;
+            $berakaian->kaki->sepatu_olahraga = (object)$berakaian->kaki->sepatu_olahraga;
+            $berakaian->kaki->sepatu_kerja = (object)$berakaian->kaki->sepatu_kerja;
+            $berakaian->kaki->sepatu_santai = (object)$berakaian->kaki->sepatu_santai;
             ?>
+            <div class="ob2">
+                <h3>Setelah Menjadi Objek</h3>
+                <?php
+                echo "<pre>";
+                print_r($berakaian);
+                echo "<pre>";
+                ?>
+            </div>
         </div>
         <div class="col2">
             <h3>Pemagilan Index sesuai yang dibutukan saja</h3>
